@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+.container {
+  max-width: 1200px !important;
+  margin: 0px auto !important;
+  /* padding: 75px !important; */
+}
+
+a {
+  text-decoration: none !important;
+  color: #777;
+}
+
+a:hover {
+  color: #333;
+}
+
+.spacer {
+  padding: 75px 0 !important;
+}
+
+.opacity {
+  opacity: 0.95;
+}
+
+.opacity:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.fade {
+    opacity: 1;
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 2s linear forwards;
+}
+@-webkit-keyframes fadeinout {
+  100% { opacity: 1; }
+}
