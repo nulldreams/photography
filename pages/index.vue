@@ -5,7 +5,7 @@
         <img :src="image" alt="">
       </div>
       <div class="icon">
-        <a href="#" @click="overlay = false"><i data-feather="x"></i></a>
+        <a href="#" @click="disableOverlay()"><i data-feather="x"></i></a>
       </div>
     </div>
     <nav-top />
@@ -102,9 +102,16 @@ export default {
     enableOverlay: function (image) {      
       if (process.browser)  {
 
-        this.overlay = true        
+        this.overlay = true
         $('body').addClass('disable-overflow')
         this.image = image
+      }
+    },
+    disableOverlay: function () {      
+      if (process.browser)  {
+        this.overlay = false
+        $('body').removeClass('disable-overflow')
+        $('body').addClass('enable-overflow')
       }
     }
   },
