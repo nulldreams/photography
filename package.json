@@ -11,7 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
     "cross-env": "^5.0.1"

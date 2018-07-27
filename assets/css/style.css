@@ -37,3 +37,10 @@ a:hover {
 @-webkit-keyframes fadeinout {
   100% { opacity: 1; }
 }
+
+.disable-overflow {
+    overflow-y: hidden !important;
+}
+.enable-overflow {
+    overflow: initial;
+}

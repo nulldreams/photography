@@ -28,7 +28,7 @@
     font-size: 30px;
 }
 .nav-component .nav .left a, .nav-component .nav .left a:hover {
-    color: #6c5ce7 !important;
+    color: #795548 !important;
 }
 .nav-component .nav .left p {
     color: #777;

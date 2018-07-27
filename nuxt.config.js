@@ -16,6 +16,9 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' }
+    ],
+    script: [
+      { src: 'https://code.jquery.com/jquery-3.3.1.min.js' }
     ]
   },
 
@@ -35,6 +38,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/index', ssr: false }
   ],
 
   /*
