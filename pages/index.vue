@@ -1,18 +1,22 @@
 <template>
   <div :class="{ 'principal': true, 'disable-overflow': true }">
-    <div v-if="overlay" class="overlay-image">
+    <div v-show="overlay" class="overlay-image">
       <div class="container imagem">
-        <img class="img-fluid" :src="image" alt="">
+        <img :src="image" alt="">
+      </div>
+      <div class="icon">
+        <a href="#" @click="overlay = false"><i data-feather="x"></i></a>
       </div>
     </div>
     <nav-top />
+
     <div class="container thumbnails fade">
-      <div class="thumb"><img v-lazy="'/images/1.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/1.png')"></div>
-      <div class="thumb"><img v-lazy="'/images/2.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/2.png')"></div>
-      <div class="thumb"><img v-lazy="'/images/3.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/3.png')"></div>
-      <div class="thumb"><img v-lazy="'/images/4.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/4.png')"></div>
-      <div class="thumb"><img v-lazy="'/images/5.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/5.png')"></div>
-      <div class="thumb"><img v-lazy="'/images/6.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/6.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/1.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/1.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/2.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/2.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/3.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/3.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/4.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/4.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/5.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/5.png')"></div>
+      <div class="thumb"><img v-lazy="'/images/low/6.png'" alt="" class="img-fluid opacity" @click="enableOverlay('/images/high/6.png')"></div>
     </div>
 
     <div class="spacer container all-projects">
@@ -50,17 +54,35 @@
 }
 .principal .overlay-image {
     z-index: 10;
-    background: rgba(25, 25, 25, .8);
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    width: 100%;
+    position: fixed;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 20px;
 }
 .principal .overlay-image .imagem {
-  width: 40%;
+  max-height: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.principal .overlay-image .imagem img {
+  height: 100%;
+}
+.principal .overlay-image .icon {
+  /* margin-left: auto; */
+  padding-right: 20px;
+  margin-bottom: auto;
+}
+.principal .feather {
+  stroke: #999;
 }
 </style>
 <script>
@@ -84,6 +106,13 @@ export default {
         $('body').addClass('disable-overflow')
         this.image = image
       }
+    }
+  },
+  mounted() {
+    if (process.browser) {
+        $(function () {
+            feather.replace()
+        })
     }
   }
 }
